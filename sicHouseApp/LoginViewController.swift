@@ -15,6 +15,9 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passField: UITextField!
     
+    @IBAction func signupdidpress(_ sender: Any) {
+        
+    }
     @IBAction func loginPress(_ sender: Any) {
         Auth.auth().signIn(withEmail: emailField.text!,
                                password: passField.text!) { (user, error) in

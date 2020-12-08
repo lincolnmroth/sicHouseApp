@@ -13,6 +13,7 @@ import FirebaseDatabase
 class ToDoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     var list: [NSDictionary] = []
     var selected = NSDictionary()
+    var currIndex = Int()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -108,6 +109,7 @@ class ToDoViewController: UIViewController, UITableViewDelegate, UITableViewData
         print("222")
         print("You selected cell #\(indexPath.row)!")
         selected = self.list[indexPath.row]
+        currIndex = indexPath.row
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "todosegue", sender: (self.tableView.dequeueReusableCell(withIdentifier: "cell1")!) as UITableViewCell)
 
@@ -132,6 +134,7 @@ class ToDoViewController: UIViewController, UITableViewDelegate, UITableViewData
         print("testestst")
         if let destination = segue.destination as? ToDoItemViewController{
             destination.selectedItem = selected
+            destination.selectedIndex = currIndex
 
         }
         

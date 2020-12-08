@@ -674,31 +674,31 @@
                                 <rect key="frame" x="115" y="372" width="207" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bwh-zX-12M">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bwh-zX-12M">
                                 <rect key="frame" x="330" y="91" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c8a-fj-KZ6">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="c8a-fj-KZ6">
                                 <rect key="frame" x="330" y="131" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wu2-H8-s4M">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wu2-H8-s4M">
                                 <rect key="frame" x="330" y="171" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="upJ-X1-sUe">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="upJ-X1-sUe">
                                 <rect key="frame" x="330" y="210" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cAn-Lb-yCD">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cAn-Lb-yCD">
                                 <rect key="frame" x="330" y="249" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="03W-BS-rD7">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="03W-BS-rD7">
                                 <rect key="frame" x="330" y="288" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kl3-q2-q11">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kl3-q2-q11">
                                 <rect key="frame" x="330" y="327" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
@@ -707,6 +707,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
+                                    <action selector="saveDidPress:" destination="B7q-L2-7pK" eventType="touchUpInside" id="Cu3-T1-XBy"/>
                                     <action selector="submitDidPress:" destination="EiR-Te-sZf" eventType="touchUpInside" id="dJg-ll-gEw"/>
                                     <action selector="submitDidPress:" destination="acr-sV-ace" eventType="touchUpInside" id="zBV-mu-A7b"/>
                                 </connections>
@@ -717,15 +718,25 @@
                     </view>
                     <connections>
                         <outlet property="aakashLabel" destination="Szy-Tf-GfP" id="AbR-us-2xL"/>
+                        <outlet property="aakashSwitch" destination="03W-BS-rD7" id="53j-oO-mGX"/>
                         <outlet property="anitejLabel" destination="So5-Kz-JSK" id="Wkc-Ba-lnq"/>
+                        <outlet property="anitejSwitch" destination="c8a-fj-KZ6" id="6La-5W-0Fx"/>
+                        <outlet property="commentsField" destination="Ggs-hS-mqY" id="b2Q-nO-dcK"/>
                         <outlet property="commentsLabel" destination="K9C-Tk-dCo" id="ASh-sz-3os"/>
                         <outlet property="creatorLabel" destination="vKk-RQ-YWo" id="4dG-yh-b3a"/>
+                        <outlet property="datePicker" destination="DI0-Fv-apl" id="fhp-6z-ZMV"/>
                         <outlet property="dueLabel" destination="PRT-RD-31u" id="N2u-RI-AkW"/>
                         <outlet property="lincolnLabel" destination="zwd-uN-oob" id="Vn0-Bu-Y6h"/>
+                        <outlet property="lincolnSwitch" destination="Bwh-zX-12M" id="4od-gp-6Lv"/>
                         <outlet property="riaLabel" destination="IPg-15-XbF" id="Qjy-jt-GSv"/>
+                        <outlet property="riaSwitch" destination="wu2-H8-s4M" id="Vai-nt-m4r"/>
                         <outlet property="rohanLabel" destination="eJ2-Vd-2xH" id="Hmv-2b-bmI"/>
+                        <outlet property="rohanSwitch" destination="cAn-Lb-yCD" id="KQS-wl-mhI"/>
                         <outlet property="samLabel" destination="w1i-Us-4gr" id="ytr-pF-F78"/>
+                        <outlet property="samSwitch" destination="kl3-q2-q11" id="os6-Nd-jLs"/>
                         <outlet property="silpitaLabel" destination="uAZ-2r-SWp" id="iyh-tZ-t5U"/>
+                        <outlet property="silpitaSwitch" destination="upJ-X1-sUe" id="jHL-x8-5fw"/>
+                        <outlet property="taskField" destination="weC-dH-lhu" id="TCY-Pj-Tox"/>
                         <outlet property="taskLabel" destination="evJ-BV-bLu" id="8zl-c3-pve"/>
                     </connections>
                 </viewController>

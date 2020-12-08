@@ -45,6 +45,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QX5-S6-zjS">
+                                <rect key="frame" x="20" y="216" width="374" height="247"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="K28-pH-L1j">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K28-pH-L1j" id="dBd-Mc-hJN">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86C-DW-TvX">
+                                <rect key="frame" x="275" y="176" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Refresh"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FmP-fd-s9T"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -52,6 +72,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="plp-kc-sph"/>
                     <connections>
                         <outlet property="nameField" destination="MjR-8B-Ek4" id="Ise-I3-RNI"/>
+                        <outlet property="tableView" destination="QX5-S6-zjS" id="ST2-NY-Kbm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zPg-YB-r2M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -742,7 +763,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQY-lh-OcC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2581.1594202898555" y="487.5"/>
+            <point key="canvasLocation" x="1880" y="567"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="4xQ-tB-4gy">

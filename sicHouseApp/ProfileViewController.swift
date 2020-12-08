@@ -12,6 +12,7 @@ import FirebaseDatabase
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameField: UILabel!
     @IBAction func signOutDidPress(_ sender: Any) {
         do {

@@ -12,7 +12,10 @@
 		7228B8B2257ECFF800E407C0 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7228B8B1257ECFF800E407C0 /* ShoppingViewController.swift */; };
 		723F66C9256C7046005B4337 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F66C8256C7046005B4337 /* LoginViewController.swift */; };
 		723F671D256C78AE005B4337 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F671C256C78AE005B4337 /* HomeViewController.swift */; };
+		726CB925257F21CA0025A4FA /* ToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CB924257F21CA0025A4FA /* ToDoItemViewController.swift */; };
 		728DD296257EE31A008BE37B /* AddShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728DD295257EE31A008BE37B /* AddShoppingViewController.swift */; };
+		728DD29A257F037C008BE37B /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728DD299257F037C008BE37B /* ToDoViewController.swift */; };
+		728DD29D257F0389008BE37B /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728DD29C257F0389008BE37B /* AddToDoViewController.swift */; };
 		72EDCF7A256A35AA00DFBC4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EDCF79256A35AA00DFBC4A /* AppDelegate.swift */; };
 		72EDCF7C256A35AA00DFBC4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EDCF7B256A35AA00DFBC4A /* SceneDelegate.swift */; };
 		72EDCF7E256A35AA00DFBC4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EDCF7D256A35AA00DFBC4A /* ViewController.swift */; };
@@ -29,7 +32,10 @@
 		7228B8B1257ECFF800E407C0 /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 		723F66C8256C7046005B4337 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		723F671C256C78AE005B4337 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		726CB924257F21CA0025A4FA /* ToDoItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemViewController.swift; sourceTree = "<group>"; };
 		728DD295257EE31A008BE37B /* AddShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShoppingViewController.swift; sourceTree = "<group>"; };
+		728DD299257F037C008BE37B /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		728DD29C257F0389008BE37B /* AddToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
 		72EDCF76256A35AA00DFBC4A /* sicHouseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sicHouseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72EDCF79256A35AA00DFBC4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72EDCF7B256A35AA00DFBC4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,7 +89,6 @@
 		72EDCF78256A35AA00DFBC4A /* sicHouseApp */ = {
 			isa = PBXGroup;
 			children = (
-				7228B8B1257ECFF800E407C0 /* ShoppingViewController.swift */,
 				72EDCF8E256A3A5800DFBC4A /* GoogleService-Info.plist */,
 				72EDCF79256A35AA00DFBC4A /* AppDelegate.swift */,
 				72EDCF7B256A35AA00DFBC4A /* SceneDelegate.swift */,
@@ -95,7 +100,11 @@
 				723F66C8256C7046005B4337 /* LoginViewController.swift */,
 				723F671C256C78AE005B4337 /* HomeViewController.swift */,
 				7228B8AE257EC69300E407C0 /* ProfileViewController.swift */,
+				7228B8B1257ECFF800E407C0 /* ShoppingViewController.swift */,
 				728DD295257EE31A008BE37B /* AddShoppingViewController.swift */,
+				728DD299257F037C008BE37B /* ToDoViewController.swift */,
+				728DD29C257F0389008BE37B /* AddToDoViewController.swift */,
+				726CB924257F21CA0025A4FA /* ToDoItemViewController.swift */,
 			);
 			path = sicHouseApp;
 			sourceTree = "<group>";
@@ -226,8 +235,11 @@
 			files = (
 				7228B8AF257EC69300E407C0 /* ProfileViewController.swift in Sources */,
 				723F671D256C78AE005B4337 /* HomeViewController.swift in Sources */,
+				726CB925257F21CA0025A4FA /* ToDoItemViewController.swift in Sources */,
+				728DD29D257F0389008BE37B /* AddToDoViewController.swift in Sources */,
 				728DD296257EE31A008BE37B /* AddShoppingViewController.swift in Sources */,
 				7228B8B2257ECFF800E407C0 /* ShoppingViewController.swift in Sources */,
+				728DD29A257F037C008BE37B /* ToDoViewController.swift in Sources */,
 				723F66C9256C7046005B4337 /* LoginViewController.swift in Sources */,
 				72EDCF7E256A35AA00DFBC4A /* ViewController.swift in Sources */,
 				72EDCF7A256A35AA00DFBC4A /* AppDelegate.swift in Sources */,

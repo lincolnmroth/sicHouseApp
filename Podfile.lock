@@ -1,4 +1,5 @@
 PODS:
+  - CalendarKit (0.14.2)
   - Firebase/Analytics (7.1.0):
     - Firebase/Core
   - Firebase/Auth (7.1.0):
@@ -80,6 +81,7 @@ PODS:
   - PromisesObjC (1.2.11)
 
 DEPENDENCIES:
+  - CalendarKit
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
@@ -87,6 +89,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - CalendarKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -103,6 +106,7 @@ SPEC REPOS:
     - PromisesObjC
 
 SPEC CHECKSUMS:
+  CalendarKit: 35dbb6e0809f7c282982a18e04fef71952d3cc55
   Firebase: 78e8dd2e39d653de6270432ad84fe8b59f7bf4e8
   FirebaseAnalytics: 7f165a56dea86ddd5b8ce02af3bee982c683405c
   FirebaseAuth: f82c2cfcc1c107bb0a97735cdbce4eb2a601f710
@@ -118,6 +122,6 @@ SPEC CHECKSUMS:
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
 
-PODFILE CHECKSUM: 0506587dca89fd3f9c3e01024665f18d5008fe8e
+PODFILE CHECKSUM: 443374b65ec20448573e35486965c1a2b8c0e605
 
 COCOAPODS: 1.9.3

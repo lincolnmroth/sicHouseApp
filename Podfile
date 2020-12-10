@@ -8,7 +8,7 @@ target 'sicHouseApp' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Core'
-
+  pod 'CalendarKit'
   # Pods for sicHouseApp
 
 end

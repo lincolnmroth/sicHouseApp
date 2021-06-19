@@ -7,46 +7,19 @@
 
 import UIKit
 import CalendarKit
+import Foundation
+import FirebaseDatabase
+
 
 class CalendarViewController: DayViewController {
 
-    var data = [["Breakfast at Tiffany's",
-                 "New York, 5th avenue"],
-                
-                ["Workout",
-                 "Tufteparken"],
-                
-                ["Meeting with Alex",
-                 "Home",
-                 "Oslo, Tjuvholmen"],
-                
-                ["Beach Volleyball",
-                 "Ipanema Beach",
-                 "Rio De Janeiro"],
-                
-                ["WWDC",
-                 "Moscone West Convention Center",
-                 "747 Howard St"],
-                
-                ["Google I/O",
-                 "Shoreline Amphitheatre",
-                 "One Amphitheatre Parkway"],
-                
-                ["✈️️ to Svalbard ❄️️❄️️❄️️❤️️",
-                 "Oslo Gardermoen"],
-                
-                ["💻📲 Developing CalendarKit",
-                 "🌍 Worldwide"],
-                
-                ["Software Development Lecture",
-                 "Mikpoli MB310",
-                 "Craig Federighi"],
-                
+    var data = [["Sorry",
+                 "I'm bad at coding this shouldn't be here"],
     ]
     
     var generatedEvents = [EventDescriptor]()
     var alreadyGeneratedSet = Set<Date>()
-    
+
     var colors = [UIColor.blue,
                   UIColor.yellow,
                   UIColor.green,
@@ -61,7 +34,7 @@ class CalendarViewController: DayViewController {
     }()
 
     override func loadView() {
-      calendar.timeZone = TimeZone(identifier: "Europe/Paris")!
+      calendar.timeZone = TimeZone(identifier: "America/New_York")!
 
       dayView = DayView(calendar: calendar)
       view = dayView
@@ -69,7 +42,7 @@ class CalendarViewController: DayViewController {
     
     override func viewDidLoad() {
       super.viewDidLoad()
-      title = "CalendarKit Demo"
+      title = "Calendar"
       navigationController?.navigationBar.isTranslucent = false
       dayView.autoScrollToFirstEvent = true
       reloadData()
@@ -85,45 +58,130 @@ class CalendarViewController: DayViewController {
       return generatedEvents
     }
     
+    
     private func generateEventsForDate(_ date: Date) -> [EventDescriptor] {
-      var workingDate = Calendar.current.date(byAdding: .hour, value: Int.random(in: 1...15), to: date)!
-      var events = [Event]()
-      
-      for i in 0...4 {
-        let event = Event()
 
-        let duration = Int.random(in: 60 ... 160)
-        event.startDate = workingDate
-        event.endDate = Calendar.current.date(byAdding: .minute, value: duration, to: workingDate)!
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-YYYY"
 
-        var info = data[Int(arc4random_uniform(UInt32(data.count)))]
-        
-        let timezone = dayView.calendar.timeZone
-        print(timezone)
+        print(dateFormatter.string(from: date))
+        let formattedDate = dateFormatter.string(from: date)
+        var events = [Event]()
 
-        info.append(rangeFormatter.string(from: event.startDate, to: event.endDate))
-        event.text = info.reduce("", {$0 + $1 + "\n"})
-        event.color = colors[Int(arc4random_uniform(UInt32(colors.count)))]
-        event.isAllDay = Int(arc4random_uniform(2)) % 2 == 0
         
-        // Event styles are updated independently from CalendarStyle
-        // hence the need to specify exact colors in case of Dark style
-        if #available(iOS 12.0, *) {
-          if traitCollection.userInterfaceStyle == .dark {
-            event.textColor = textColorForEventInDarkTheme(baseColor: event.color)
-            event.backgroundColor = event.color.withAlphaComponent(0.6)
-          }
-        }
         
-        events.append(event)
-        
-        let nextOffset = Int.random(in: 40 ... 250)
-        workingDate = Calendar.current.date(byAdding: .minute, value: nextOffset, to: workingDate)!
-        event.userInfo = String(i)
+        let ref = Database.database().reference()
+        ref.child("calendar").child(dateFormatter.string(from: date)).observeSingleEvent(of: .value, with: { (snapshot) in
+            print("Lalalala")
+            let value = snapshot.value as? NSArray
+            let event = Event()
+            for ev in value!{
+                let eventDict = ev as! Dictionary<String, Any>
+                
+                var dateComponents1 = DateComponents()
+                var dateComponents2 = DateComponents()
+                dateComponents1.year = Int(formattedDate.components(separatedBy: "-")[2])
+                dateComponents1.month = Int(formattedDate.components(separatedBy: "-")[0])
+                dateComponents1.day = Int(formattedDate.components(separatedBy: "-")[1])
+                dateComponents2.year = Int(formattedDate.components(separatedBy: "-")[2])
+                dateComponents2.month = Int(formattedDate.components(separatedBy: "-")[0])
+                dateComponents2.day = Int(formattedDate.components(separatedBy: "-")[1])
+                dateComponents1.hour = Int((eventDict["startTime"] as? String)!.components(separatedBy: "-")[0])
+                dateComponents1.minute = Int((eventDict["startTime"] as? String)!.components(separatedBy: "-")[1])
+                dateComponents2.hour = Int((eventDict["endTime"] as? String)!.components(separatedBy: "-")[0])
+                dateComponents2.minute = Int((eventDict["endTime"] as? String)!.components(separatedBy: "-")[1])
+                let userCalendar = Calendar.current // user calendar
+                event.startDate =  userCalendar.date(from: dateComponents1)!
+                event.text = (eventDict["text"] as? String)!
+                event.isAllDay = false
+                event.endDate =  userCalendar.date(from: dateComponents2)!
+                print("hihihihi")
+                print(event)
+                events.append(event)
+                print(events)
+            }
+            
+            
+            
+        }) { (error) in
+          print(error.localizedDescription)
       }
+        return events
 
-      print("Events for \(date)")
-      return events
+//        print("hi?")
+//        print(self.events)
+//        return self.events
+//        let event = Event()
+//
+//        var dateComponents1 = DateComponents()
+//        dateComponents1.year = 2021
+//        dateComponents1.month = 6
+//        dateComponents1.day = 19
+//        dateComponents1.timeZone = TimeZone(abbreviation: "EST") // Japan Standard Time
+//        dateComponents1.hour = 8
+//        dateComponents1.minute = 34
+//
+//        var dateComponents2 = DateComponents()
+//        dateComponents2.year = 2021
+//        dateComponents2.month = 6
+//        dateComponents2.day = 19
+//        dateComponents2.timeZone = TimeZone(abbreviation: "EST") // Japan Standard Time
+//        dateComponents2.hour = 9
+//        dateComponents2.minute = 34
+//
+//        // Create date from components
+//        let userCalendar = Calendar.current // user calendar
+//        event.startDate =  userCalendar.date(from: dateComponents1)!
+//        event.text = "Test Event"
+//        event.isAllDay = false
+//        event.endDate =  userCalendar.date(from: dateComponents2)!
+//        // set event.color based on person who created it! don't know how colors work lol
+////            print(events[0].backgroundColor)
+////            print(events[0].color)
+////            print(events[0].textColor)
+//
+//        events.append(event)
+//        print(events)
+//        return events
+//        return events
+//      var workingDate = Calendar.current.date(byAdding: .hour, value: Int.random(in: 1...15), to: date)!
+//      var events = [Event]()
+//
+//      for i in 0...4 {
+//        let event = Event()
+//
+//        let duration = Int.random(in: 60 ... 160)
+//        event.startDate = workingDate
+//        event.endDate = Calendar.current.date(byAdding: .minute, value: duration, to: workingDate)!
+//
+//        var info = data[Int(arc4random_uniform(UInt32(data.count)))]
+//
+//        let timezone = dayView.calendar.timeZone
+//        print(timezone)
+//
+//        info.append(rangeFormatter.string(from: event.startDate, to: event.endDate))
+//        event.text = info.reduce("", {$0 + $1 + "\n"})
+//        event.color = colors[Int(arc4random_uniform(UInt32(colors.count)))]
+//        event.isAllDay = Int(arc4random_uniform(2)) % 2 == 0
+//
+//        // Event styles are updated independently from CalendarStyle
+//        // hence the need to specify exact colors in case of Dark style
+//        if #available(iOS 12.0, *) {
+//          if traitCollection.userInterfaceStyle == .dark {
+//            event.textColor = textColorForEventInDarkTheme(baseColor: event.color)
+//            event.backgroundColor = event.color.withAlphaComponent(0.6)
+//          }
+//        }
+//
+//        events.append(event)
+//
+//        let nextOffset = Int.random(in: 40 ... 250)
+//        workingDate = Calendar.current.date(byAdding: .minute, value: nextOffset, to: workingDate)!
+//        event.userInfo = String(i)
+//      }
+//
+//      print("Events for \(date)")
+//      return events
     }
     
     private func textColorForEventInDarkTheme(baseColor: UIColor) -> UIColor {
@@ -188,14 +246,14 @@ class CalendarViewController: DayViewController {
 
       event.startDate = startDate
       event.endDate = Calendar.current.date(byAdding: .minute, value: duration, to: startDate)!
-      
+
       var info = data[Int(arc4random_uniform(UInt32(data.count)))]
 
       info.append(rangeFormatter.string(from: event.startDate, to: event.endDate))
       event.text = info.reduce("", {$0 + $1 + "\n"})
       event.color = colors[Int(arc4random_uniform(UInt32(colors.count)))]
       event.editedEvent = event
-      
+
       // Event styles are updated independently from CalendarStyle
       // hence the need to specify exact colors in case of Dark style
       if #available(iOS 12.0, *) {
